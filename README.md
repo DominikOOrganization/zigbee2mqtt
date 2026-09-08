@@ -6,7 +6,7 @@
     <br>
     <div style="display: flex;">
         <a href="https://github.com/DominikOOrganization/zigbee2mqtt/releases">
-            <img src="https://img.shields.io/github/release/koenkk/zigbee2mqtt.svg">
+            <img src="https://img.shields.io/github/release/DominikOOrganization/zigbee2mqtt.svg">
         </a>
         <a href="https://www.npmjs.com/package/zigbee2mqtt">
             <img src="https://img.shields.io/npm/v/zigbee2mqtt">
@@ -21,7 +21,7 @@
             <img src="https://img.shields.io/discord/556563650429583360.svg">
         </a>
         <a href="https://github.com/DominikOOrganization/zigbee2mqtt/stargazers">
-            <img src="https://img.shields.io/github/stars/koenkk/zigbee2mqtt.svg">
+            <img src="https://img.shields.io/github/stars/DominikOOrganization/zigbee2mqtt.svg">
         </a>
         <a href="https://www.paypal.me/koenkk">
             <img src="https://img.shields.io/badge/donate-PayPal-blue.svg">

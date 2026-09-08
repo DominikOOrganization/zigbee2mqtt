@@ -96,7 +96,7 @@ jobs:
                   context: .
                   file: docker/Dockerfile
                   platforms: linux/arm64/v8,linux/amd64,linux/arm/v6,linux/arm/v7,linux/riscv64,linux/386
-                  tags: koenkk/zigbee2mqtt:latest-dev,ghcr.io/koenkk/zigbee2mqtt:latest-dev
+                  tags: koenkk/zigbee2mqtt:latest-dev,ghcr.io/DominikOOrganization/zigbee2mqtt:latest-dev
                   push: true
                   build-args: |
                       COMMIT=${{ github.sha }}
@@ -131,7 +131,7 @@ jobs:
               with:
                   images: |
                       koenkk/zigbee2mqtt
-                      ghcr.io/koenkk/zigbee2mqtt
+                      ghcr.io/DominikOOrganization/zigbee2mqtt
                   tags: |
                       type=semver,pattern={{version}}
                       type=semver,pattern={{major}}.{{minor}}
@@ -191,7 +191,7 @@ jobs:
                     -H "Accept: application/vnd.github+json" \
                     -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
                     -H "X-GitHub-Api-Version: 2022-11-28" \
-                    https://api.github.com/repos/Koenkk/zigbee2mqtt-chart/actions/workflows/on_zigbee2mqtt_release.yaml/dispatches \
+                    https://api.github.com/repos/DominikOOrganization/zigbee2mqtt-chart/actions/workflows/on_zigbee2mqtt_release.yaml/dispatches \
                     --data "{\"ref\": \"main\", \"inputs\": { \"zigbee2mqtt_version\": \"$TAG\"}}"
 
             - name: 'release: merge dev -> master and promote dev'
