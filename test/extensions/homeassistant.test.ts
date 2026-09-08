@@ -1216,7 +1216,7 @@ describe("Extension: HomeAssistant", () => {
                     value_template: "{{ value_json.state }}",
                 },
             ],
-            current_temperature_template: '{{ value_json["local_temperature"] }}',
+            current_temperature_template: '{{ value_json["device_temperature"] }}',
             current_temperature_topic: "zigbee2mqtt/TS0601_thermostat",
             device: {
                 identifiers: ["zigbee2mqtt_0x0017882104a44559"],
@@ -1331,7 +1331,7 @@ describe("Extension: HomeAssistant", () => {
                 "{% set values = {None:None,'idle':'idle','heat':'heating','cool':'cooling','fan_only':'fan'} %}{{ values[value_json[\"running_state\"]] }}",
             action_topic: "zigbee2mqtt/bosch_radiator",
             availability: [{topic: "zigbee2mqtt/bridge/state", value_template: "{{ value_json.state }}"}],
-            current_temperature_template: '{{ value_json["local_temperature"] }}',
+            current_temperature_template: '{{ value_json["device_temperature"] }}',
             current_temperature_topic: "zigbee2mqtt/bosch_radiator",
             device: {
                 identifiers: ["zigbee2mqtt_0x18fc2600000d7ae2"],
@@ -1404,7 +1404,7 @@ describe("Extension: HomeAssistant", () => {
                 "{% set values = {None:None,'idle':'idle','heat':'heating','cool':'cooling','fan_only':'fan'} %}{{ values[value_json[\"running_state\"]] }}",
             action_topic: "zigbee2mqtt/bosch_radiator",
             availability: [{topic: "zigbee2mqtt/bridge/state", value_template: "{{ value_json.state }}"}],
-            current_temperature_template: '{{ value_json["local_temperature"] }}',
+            current_temperature_template: '{{ value_json["device_temperature"] }}',
             current_temperature_topic: "zigbee2mqtt/bosch_radiator",
             device: {
                 identifiers: ["zigbee2mqtt_0x18fc2600000d7ae2"],
@@ -1474,7 +1474,7 @@ describe("Extension: HomeAssistant", () => {
             availability: [{topic: "zigbee2mqtt/bridge/state", value_template: "{{ value_json.state }}"}],
             current_humidity_template: '{{ value_json["humidity"] }}',
             current_humidity_topic: "zigbee2mqtt/bosch_rm230z",
-            current_temperature_template: '{{ value_json["local_temperature"] }}',
+            current_temperature_template: '{{ value_json["device_temperature"] }}',
             current_temperature_topic: "zigbee2mqtt/bosch_rm230z",
             default_entity_id: "climate.bosch_rm230z",
             device: {
