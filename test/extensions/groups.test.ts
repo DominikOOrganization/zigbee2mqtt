@@ -124,7 +124,7 @@ describe("Extension: Groups", () => {
     });
 
     it("Should publish state change for group when members state change", async () => {
-        // Created for https://github.com/Koenkk/zigbee2mqtt/issues/5725
+        // Created for https://github.com/DominikOOrganization/zigbee2mqtt/issues/5725
         const device = devices.bulb_color;
         const endpoint = device.getEndpoint(1)!;
         const group = groups.group_1;

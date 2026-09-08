@@ -517,7 +517,7 @@ describe("Extension: Publish", () => {
     });
 
     it("Should publish messages to group with just 1 Hue Twilight in int (convers have an `endpoint` on it)", async () => {
-        // https://github.com/Koenkk/zigbee2mqtt/issues/24792
+        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/24792
         const group = groups.hue_twilight_group;
         await mockMQTTEvents.message("zigbee2mqtt/hue_twilight_group/set", stringify({state: "ON"}));
         await flushPromises();
@@ -1006,7 +1006,7 @@ describe("Extension: Publish", () => {
     });
 
     it("Should turn bulb on with correct brightness when device is turned off twice and brightness is reported", async () => {
-        // Test case for: https://github.com/Koenkk/zigbee2mqtt/issues/5413
+        // Test case for: https://github.com/DominikOOrganization/zigbee2mqtt/issues/5413
         const device = devices.bulb_color;
         const endpoint = device.getEndpoint(1)!;
         await mockMQTTEvents.message("zigbee2mqtt/bulb_color/set", stringify({state: "ON", brightness: 200}));
@@ -1081,7 +1081,7 @@ describe("Extension: Publish", () => {
     });
 
     it("Should turn bulb on with full brightness when transition is used and no brightness is known", async () => {
-        // https://github.com/Koenkk/zigbee2mqtt/issues/3799
+        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/3799
         const device = devices.bulb_color;
         const endpoint = device.getEndpoint(1)!;
         await mockMQTTEvents.message("zigbee2mqtt/bulb_color/set", stringify({state: "OFF", transition: 0.5}));
@@ -1109,7 +1109,7 @@ describe("Extension: Publish", () => {
     });
 
     it("Transition parameter should not influence brightness on state ON", async () => {
-        // https://github.com/Koenkk/zigbee2mqtt/issues/3563
+        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/3563
         const device = devices.bulb_color;
         const endpoint = device.getEndpoint(1)!;
         await mockMQTTEvents.message("zigbee2mqtt/bulb_color/set", stringify({state: "ON", brightness: 50}));
@@ -1778,7 +1778,7 @@ describe("Extension: Publish", () => {
     });
 
     it("Should publish separate genOnOff to GL-S-007ZS when setting state and brightness as bulb doesnt turn on with moveToLevelWithOnOff", async () => {
-        // https://github.com/Koenkk/zigbee2mqtt/issues/2757
+        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/2757
         const device = devices["GL-S-007ZS"];
         const endpoint = device.getEndpoint(1)!;
         await mockMQTTEvents.message("zigbee2mqtt/GL-S-007ZS/set", stringify({state: "ON", brightness: 20}));
@@ -1810,7 +1810,7 @@ describe("Extension: Publish", () => {
     });
 
     it("Should restore brightness when its turned on with transition, Z2M is restarted and turned on again", async () => {
-        // https://github.com/Koenkk/zigbee2mqtt/issues/7106
+        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/7106
         const device = devices.bulb_color;
         const endpoint = device.getEndpoint(1)!;
         endpoint.command.mockClear();
@@ -1839,7 +1839,7 @@ describe("Extension: Publish", () => {
     });
 
     it("Should restore brightness when its turned off without transition and is turned on with", async () => {
-        // https://github.com/Koenkk/zigbee-herdsman-converters/issues/1097
+        // https://github.com/DominikOOrganization/zigbee-herdsman-converters/issues/1097
         const device = devices.bulb_color;
         const endpoint = device.getEndpoint(1)!;
         endpoint.command.mockClear();
@@ -1876,7 +1876,7 @@ describe("Extension: Publish", () => {
     });
 
     it("Shouldnt use moveToLevelWithOnOff on turn on when no transition has been used as some devices do not turn on in that case", async () => {
-        // https://github.com/Koenkk/zigbee2mqtt/issues/3332
+        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/3332
         const device = devices.bulb_color;
         const endpoint = device.getEndpoint(1)!;
 

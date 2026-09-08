@@ -1906,7 +1906,7 @@ describe("Extension: HomeAssistant", () => {
     });
 
     it("Should set missing values to null", async () => {
-        // https://github.com/Koenkk/zigbee2mqtt/issues/6987
+        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/6987
         const device = devices.WSDCGQ11LM;
         const data = {measuredValue: -85};
         const payload = {
@@ -2447,7 +2447,7 @@ describe("Extension: HomeAssistant", () => {
             },
             device_class: "firmware",
             entity_category: "config",
-            entity_picture: "https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png",
+            entity_picture: "https://github.com/DominikOOrganization/zigbee2mqtt/raw/master/images/logo.png",
             name: null,
             object_id: "bulb",
             default_entity_id: "update.bulb",

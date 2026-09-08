@@ -1,33 +1,33 @@
 <div align="center">
-    <a href="https://github.com/koenkk/zigbee2mqtt">
+    <a href="https://github.com/DominikOOrganization/zigbee2mqtt">
         <img width="150" height="150" src="images/logo.png">
     </a>
     <br>
     <br>
     <div style="display: flex;">
-        <a href="https://github.com/Koenkk/zigbee2mqtt/releases">
+        <a href="https://github.com/DominikOOrganization/zigbee2mqtt/releases">
             <img src="https://img.shields.io/github/release/koenkk/zigbee2mqtt.svg">
         </a>
         <a href="https://www.npmjs.com/package/zigbee2mqtt">
             <img src="https://img.shields.io/npm/v/zigbee2mqtt">
         </a>
-        <a href="https://github.com/Koenkk/zigbee2mqtt/actions/workflows/ci.yml">
-            <img src="https://github.com/Koenkk/zigbee2mqtt/actions/workflows/ci.yml/badge.svg">
+        <a href="https://github.com/DominikOOrganization/zigbee2mqtt/actions/workflows/ci.yml">
+            <img src="https://github.com/DominikOOrganization/zigbee2mqtt/actions/workflows/ci.yml/badge.svg">
         </a>
-        <a href="https://github.com/Koenkk/zigbee2mqtt/actions/workflows/github-code-scanning/codeql">
-            <img src="https://github.com/Koenkk/zigbee2mqtt/actions/workflows/github-code-scanning/codeql/badge.svg">
+        <a href="https://github.com/DominikOOrganization/zigbee2mqtt/actions/workflows/github-code-scanning/codeql">
+            <img src="https://github.com/DominikOOrganization/zigbee2mqtt/actions/workflows/github-code-scanning/codeql/badge.svg">
         </a>
         <a href="https://discord.gg/dadfWYE">
             <img src="https://img.shields.io/discord/556563650429583360.svg">
         </a>
-        <a href="https://github.com/Koenkk/zigbee2mqtt/stargazers">
+        <a href="https://github.com/DominikOOrganization/zigbee2mqtt/stargazers">
             <img src="https://img.shields.io/github/stars/koenkk/zigbee2mqtt.svg">
         </a>
         <a href="https://www.paypal.me/koenkk">
             <img src="https://img.shields.io/badge/donate-PayPal-blue.svg">
         </a>
     </div>
-    <h1>Zigbee2MQTT  🌉 🐝</h1>
+    <h1>Zigbee2MQTT - Dominik Ochlast</h1>
     <p>
         Allows you to use your Zigbee devices <b>without</b> the vendor's bridge or gateway.
     </p>
@@ -102,7 +102,7 @@ Integration implemented in ioBroker ([documentation](https://github.com/o0shojo0
 
 ### Internal Architecture
 
-Zigbee2MQTT is made up of three modules, each developed in its own Github project. Starting from the hardware (adapter) and moving up; [zigbee-herdsman](https://github.com/koenkk/zigbee-herdsman) connects to your adapter to handle Zigbee communication and makes an API available to the higher levels of the stack. For e.g. Texas Instruments hardware, zigbee-herdsman uses the [TI zStack monitoring and test API](https://github.com/Koenkk/zigbee-herdsman/wiki/References#texas-instruments-zstack) to communicate with the adapter. The module [zigbee-herdsman-converters](https://github.com/koenkk/zigbee-herdsman-converters) handles the mapping from individual device models to the Zigbee clusters they support. [Zigbee clusters](https://github.com/Koenkk/zigbee-herdsman/wiki/References#csa-zigbee-alliance-spec) are the layers of the Zigbee protocol on top of the base protocol that define things like how lights, sensors and switches talk to each other over the Zigbee network. Finally, the Zigbee2MQTT module drives zigbee-herdsman and maps the zigbee messages to MQTT messages. Zigbee2MQTT also keeps track of the state of the system. It uses a `database.db` file to store this state; a text file with a JSON database of connected devices and their capabilities. Zigbee2MQTT provides several web-based interfaces ([zigbee2mqtt-frontend](https://github.com/nurikk/zigbee2mqtt-frontend), [zigbee2mqtt-windfront](https://github.com/Nerivec/zigbee2mqtt-windfront)) that allows monitoring and configuration.
+Zigbee2MQTT is made up of three modules, each developed in its own Github project. Starting from the hardware (adapter) and moving up; [zigbee-herdsman](https://github.com/DominikOOrganization/zigbee-herdsman) connects to your adapter to handle Zigbee communication and makes an API available to the higher levels of the stack. For e.g. Texas Instruments hardware, zigbee-herdsman uses the [TI zStack monitoring and test API](https://github.com/DominikOOrganization/zigbee-herdsman/wiki/References#texas-instruments-zstack) to communicate with the adapter. The module [zigbee-herdsman-converters](https://github.com/DominikOOrganization/zigbee-herdsman-converters) handles the mapping from individual device models to the Zigbee clusters they support. [Zigbee clusters](https://github.com/DominikOOrganization/zigbee-herdsman/wiki/References#csa-zigbee-alliance-spec) are the layers of the Zigbee protocol on top of the base protocol that define things like how lights, sensors and switches talk to each other over the Zigbee network. Finally, the Zigbee2MQTT module drives zigbee-herdsman and maps the zigbee messages to MQTT messages. Zigbee2MQTT also keeps track of the state of the system. It uses a `database.db` file to store this state; a text file with a JSON database of connected devices and their capabilities. Zigbee2MQTT provides several web-based interfaces ([zigbee2mqtt-frontend](https://github.com/nurikk/zigbee2mqtt-frontend), [zigbee2mqtt-windfront](https://github.com/Nerivec/zigbee2mqtt-windfront)) that allows monitoring and configuration.
 
 ### Developing
 
@@ -119,4 +119,4 @@ If it's not listed in [Supported devices](https://www.zigbee2mqtt.io/supported-d
 
 ## Support & help
 
-If you need assistance you can check [opened issues](https://github.com/Koenkk/zigbee2mqtt/issues). Feel free to help with Pull Requests when you were able to fix things or add new devices or just share the love on social media.
+If you need assistance you can check [opened issues](https://github.com/DominikOOrganization/zigbee2mqtt/issues). Feel free to help with Pull Requests when you were able to fix things or add new devices or just share the love on social media.

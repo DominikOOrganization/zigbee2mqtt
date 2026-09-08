@@ -454,7 +454,7 @@ describe("Extension: Receive", () => {
     });
 
     it("Shouldnt republish old state", async () => {
-        // https://github.com/Koenkk/zigbee2mqtt/issues/3572
+        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/3572
         const device = devices.bulb;
         settings.set(["devices", device.ieeeAddr, "debounce"], 0.1);
         await mockZHEvents.message({
@@ -716,7 +716,7 @@ describe("Extension: Receive", () => {
     });
 
     it("Should report correct energy and power values for different versions of SP600", async () => {
-        // https://github.com/Koenkk/zigbee-herdsman-converters/issues/915, OLD and NEW use different date code
+        // https://github.com/DominikOOrganization/zigbee-herdsman-converters/issues/915, OLD and NEW use different date code
         // divisor of OLD is not correct and therefore underreports by factor 10.
         const data = {instantaneousDemand: 496, currentSummDelivered: 6648};
 

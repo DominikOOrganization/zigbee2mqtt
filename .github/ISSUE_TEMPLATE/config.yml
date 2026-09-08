@@ -7,7 +7,7 @@ contact_links:
       url: https://www.zigbee2mqtt.io/advanced/more/switch-to-dev-branch.html
       about: If the development branch solves an issue you are facing, click here to see the instructions to switch to the development branch.
     - name: Questions/discussions
-      url: https://github.com/Koenkk/zigbee2mqtt/discussions/new
+      url: https://github.com/DominikOOrganization/zigbee2mqtt/discussions/new
       about: Ask questions, discuss devices, show things you made...
     - name: Original frontend issues
       url: https://github.com/nurikk/zigbee2mqtt-frontend/issues

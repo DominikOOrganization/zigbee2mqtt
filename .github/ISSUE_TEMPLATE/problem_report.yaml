@@ -9,12 +9,12 @@ body:
               - Zigbee2MQTT fails to start? Read [this](https://www.zigbee2mqtt.io/guide/installation/20_zigbee2mqtt-fails-to-start_crashes-runtime.html)
               - Raspberry Pi users? Make sure to check [this](https://www.zigbee2mqtt.io/guide/installation/20_zigbee2mqtt-fails-to-start_crashes-runtime.html#raspberry-pi-users-use-a-good-power-supply)
               - You read the [FAQ](https://www.zigbee2mqtt.io/guide/faq/)
-              - Are you using an EZSP adapter (e.g. Dongle-E/SkyConnect)? Try the [new driver](https://github.com/Koenkk/zigbee2mqtt/discussions/21462) 
+              - Are you using an EZSP adapter (e.g. Dongle-E/SkyConnect)? Try the [new driver](https://github.com/DominikOOrganization/zigbee2mqtt/discussions/21462) 
               - Make sure the bug also occurs in the [dev branch](https://www.zigbee2mqtt.io/advanced/more/switch-to-dev-branch.html)
               - Make sure you are using the [latest firmware](https://www.zigbee2mqtt.io/guide/adapters/#recommended) on your adapter
-              - The issue has not been [reported already](https://github.com/Koenkk/zigbee2mqtt/issues)
+              - The issue has not been [reported already](https://github.com/DominikOOrganization/zigbee2mqtt/issues)
               - Is your issue related to the frontend? Then click [here](https://github.com/nurikk/zigbee2mqtt-frontend/issues/new?assignees=&labels=bug%2Ctriage&template=bug_report.yaml&title=%5BBug%5D%3A+)
-              - If you are using the Home Assistant addon and are still on 1.18.1, check the first point of [this](https://github.com/Koenkk/zigbee2mqtt/releases/tag/1.19.0)
+              - If you are using the Home Assistant addon and are still on 1.18.1, check the first point of [this](https://github.com/DominikOOrganization/zigbee2mqtt/releases/tag/1.19.0)
     - type: textarea
       id: what_happend
       attributes:
@@ -39,7 +39,7 @@ body:
       id: z2m_version
       attributes:
           label: Zigbee2MQTT version
-          description: Can be found in the frontend -> settings -> about -> Zigbee2MQTT version. Are you running Zigbee2MQTT 1.18.1? Then read [this](https://github.com/Koenkk/zigbee2mqtt/releases/tag/1.19.0).
+          description: Can be found in the frontend -> settings -> about -> Zigbee2MQTT version. Are you running Zigbee2MQTT 1.18.1? Then read [this](https://github.com/DominikOOrganization/zigbee2mqtt/releases/tag/1.19.0).
           placeholder: '1.22.1'
       validations:
           required: true
@@ -55,7 +55,7 @@ body:
       id: adapter
       attributes:
           label: Adapter
-          description: The adapter you are using. In case of EZSP, try the [new `ember` driver](https://github.com/Koenkk/zigbee2mqtt/discussions/21462) first.
+          description: The adapter you are using. In case of EZSP, try the [new `ember` driver](https://github.com/DominikOOrganization/zigbee2mqtt/discussions/21462) first.
           placeholder: Electrolama zig-a-zig-ah! (zzh!), Slaesh's CC2652RB stick, ...
       validations:
           required: true
