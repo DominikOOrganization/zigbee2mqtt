@@ -116,7 +116,7 @@ export default class Mqtt {
 
         this.client = await connectAsync(mqttSettings.server, options);
 
-        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/9822
+        // https://github.com/Koenkk/zigbee2mqtt/issues/9822
         this.client.stream.setMaxListeners(0);
 
         this.client.on("error", (err) => {
@@ -137,7 +137,7 @@ export default class Mqtt {
 
         this.republishRetainedTimer = setTimeout(async () => {
             // Republish retained messages in case MQTT broker does not persist them.
-            // https://github.com/DominikOOrganization/zigbee2mqtt/issues/9629
+            // https://github.com/Koenkk/zigbee2mqtt/issues/9629
             for (const msg of Object.values(this.retainedMessages)) {
                 await this.publish(msg.topic, msg.payload, msg.options);
             }
@@ -205,7 +205,7 @@ export default class Mqtt {
     async publish(topic: string, payload: string, options: Partial<MqttPublishOptions> = {}): Promise<void> {
         // TODO: add `options.validateTopic: boolean` to bypass these checks when topic is "controlled"
         if (topic.includes("+") || topic.includes("#")) {
-            // https://github.com/DominikOOrganization/zigbee2mqtt/issues/26939#issuecomment-2772309646
+            // https://github.com/Koenkk/zigbee2mqtt/issues/26939#issuecomment-2772309646
             logger.error(`Topic '${topic}' includes wildcard characters, skipping publish.`);
             return;
         }

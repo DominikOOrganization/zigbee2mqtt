@@ -135,7 +135,7 @@ export class Controller {
 
                 /* v8 ignore start */
                 if ((error as Error).message.includes("USB adapter discovery error (No valid USB adapter found)")) {
-                    logger.error("If this happens after updating to Zigbee2MQTT 2.0.0, see https://github.com/DominikOOrganization/zigbee2mqtt/discussions/24364");
+                    logger.error("If this happens after updating to Zigbee2MQTT 2.0.0, see https://github.com/Koenkk/zigbee2mqtt/discussions/24364");
                 }
                 /* v8 ignore stop */
 

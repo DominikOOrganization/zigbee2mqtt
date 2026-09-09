@@ -666,7 +666,7 @@ export class HomeAssistant extends Extension {
                     /**
                      * All bulbs support brightness, note that `brightness` cannot be combined
                      * with other color modes.
-                     * https://github.com/DominikOOrganization/zigbee2mqtt/issues/26520#issuecomment-2692432058
+                     * https://github.com/Koenkk/zigbee2mqtt/issues/26520#issuecomment-2692432058
                      */
                     discoveryEntry.discovery_payload.supported_color_modes = ["brightness"];
                 }
@@ -1157,7 +1157,7 @@ export class HomeAssistant extends Extension {
                  * If Z2M binary attribute has SET access then expose it as `switch` in HA
                  * There is also a check on the values for typeof boolean to prevent invalid values and commands
                  * silently failing - commands work fine but some devices won't reject unexpected values.
-                 * https://github.com/DominikOOrganization/zigbee2mqtt/issues/7740
+                 * https://github.com/Koenkk/zigbee2mqtt/issues/7740
                  */
                 assertBinaryExpose(firstExpose);
                 if (firstExpose.access & ACCESS_SET) {
@@ -1273,13 +1273,13 @@ export class HomeAssistant extends Extension {
                 };
 
                 // When a device_class is set, unit_of_measurement must be set, otherwise warnings are generated.
-                // https://github.com/DominikOOrganization/zigbee2mqtt/issues/15958#issuecomment-1377483202
+                // https://github.com/Koenkk/zigbee2mqtt/issues/15958#issuecomment-1377483202
                 if (discoveryEntry.discovery_payload.device_class && !discoveryEntry.discovery_payload.unit_of_measurement) {
                     delete discoveryEntry.discovery_payload.device_class;
                 }
 
                 // entity_category config is not allowed for sensors
-                // https://github.com/DominikOOrganization/zigbee2mqtt/issues/20252
+                // https://github.com/Koenkk/zigbee2mqtt/issues/20252
                 if (discoveryEntry.discovery_payload.entity_category === "config") {
                     discoveryEntry.discovery_payload.entity_category = "diagnostic";
                 }
@@ -1465,7 +1465,7 @@ export class HomeAssistant extends Extension {
                         discovery_payload: {
                             name: endpointName ? `${firstExposeTyped.label} ${endpointName}` : firstExposeTyped.label,
                             // Truncate text if it's too long
-                            // https://github.com/DominikOOrganization/zigbee2mqtt/issues/23199
+                            // https://github.com/Koenkk/zigbee2mqtt/issues/23199
                             value_template: `{{ value_json["${firstExposeTyped.property}"] | default('',True) | string | truncate(254, True, '', 0) }}`,
                             ...LIST_DISCOVERY_LOOKUP[firstExposeTyped.name],
                         },
@@ -1488,7 +1488,7 @@ export class HomeAssistant extends Extension {
 
             // If a sensor has entity category `config`, then change
             // it to `diagnostic`. Sensors have no input, so can't be configured.
-            // https://github.com/DominikOOrganization/zigbee2mqtt/pull/19474
+            // https://github.com/Koenkk/zigbee2mqtt/pull/19474
             if (["binary_sensor", "sensor"].includes(entry.type) && entry.discovery_payload.entity_category === "config") {
                 entry.discovery_payload.entity_category = "diagnostic";
             }
@@ -1576,7 +1576,7 @@ export class HomeAssistant extends Extension {
         /**
          * Publish an empty value for click and action payload, in this way Home Assistant
          * can use Home Assistant entities in automations.
-         * https://github.com/DominikOOrganization/zigbee2mqtt/issues/959#issuecomment-480341347
+         * https://github.com/Koenkk/zigbee2mqtt/issues/959#issuecomment-480341347
          */
         if (this.legacyActionSensor && data.message.action) {
             await this.publishEntityState(data.entity, {action: ""});
@@ -1601,7 +1601,7 @@ export class HomeAssistant extends Extension {
         logger.debug(`Refreshing Home Assistant discovery topic for '${data.entity.name}'`);
 
         // Clear before rename so Home Assistant uses new friendly_name
-        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/4096#issuecomment-674044916
+        // https://github.com/Koenkk/zigbee2mqtt/issues/4096#issuecomment-674044916
         if (data.homeAssisantRename) {
             const discovered = this.getDiscovered(data.entity);
             for (const topic of Object.keys(discovered.messages)) {
@@ -1610,7 +1610,7 @@ export class HomeAssistant extends Extension {
             discovered.messages = {};
 
             // Make sure Home Assistant deletes the old entity first otherwise another one (_2) is created
-            // https://github.com/DominikOOrganization/zigbee2mqtt/issues/12610
+            // https://github.com/Koenkk/zigbee2mqtt/issues/12610
             await utils.sleep(2);
         }
 
@@ -1700,7 +1700,7 @@ export class HomeAssistant extends Extension {
                 mockProperties: [{property: "update", value: {state: null}}],
                 discovery_payload: {
                     name: null,
-                    entity_picture: "https://github.com/DominikOOrganization/zigbee2mqtt/raw/master/images/logo.png",
+                    entity_picture: "https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png",
                     state_topic: true,
                     device_class: "firmware",
                     entity_category: "config",
@@ -2133,7 +2133,7 @@ export class HomeAssistant extends Extension {
         }
 
         // Make sure Home Assistant deletes the old entity first otherwise another one (_2) is created
-        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/12610
+        // https://github.com/Koenkk/zigbee2mqtt/issues/12610
         logger.debug("Finished clearing scene discovery topics, waiting for Home Assistant.");
         await utils.sleep(2);
 
@@ -2160,7 +2160,7 @@ export class HomeAssistant extends Extension {
         const url = settings.get().frontend?.url ?? "";
         // Since zigbee2mqtt-windfront support multiple instances the configuration URL contains the
         // instance ID. Since we don't know which instance it is we always point to 0.
-        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/28936
+        // https://github.com/Koenkk/zigbee2mqtt/issues/28936
         const urlEntityPostfix = settings.get().frontend.package === "zigbee2mqtt-windfront" ? "0/" : "";
         if (entity.isDevice()) {
             assert(entity.definition, `Cannot 'getDevicePayload' for unsupported device`);

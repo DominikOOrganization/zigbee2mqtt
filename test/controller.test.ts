@@ -1395,7 +1395,7 @@ describe("Controller", () => {
     });
 
     it("Ignore messages from coordinator", async () => {
-        // https://github.com/DominikOOrganization/zigbee2mqtt/issues/9218
+        // https://github.com/Koenkk/zigbee2mqtt/issues/9218
         await controller.start();
         const device = devices.coordinator;
         const payload = {

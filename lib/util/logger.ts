@@ -243,7 +243,7 @@ class Logger {
     }
 
     // Workaround for https://github.com/winstonjs/winston/issues/1629.
-    // https://github.com/DominikOOrganization/zigbee2mqtt/pull/10905
+    // https://github.com/Koenkk/zigbee2mqtt/pull/10905
     /* v8 ignore start */
     public async end(): Promise<void> {
         // Only flush the file transport, don't end logger itself as log() might still be called

@@ -629,7 +629,7 @@ export function migrateIfNecessary(): void {
         }
 
         if (migrationNotesFileName && migrationNotes.size > 0) {
-            migrationNotes.add("For more details, see https://github.com/DominikOOrganization/zigbee2mqtt/discussions/24198");
+            migrationNotes.add("For more details, see https://github.com/Koenkk/zigbee2mqtt/discussions/24198");
             const migrationNotesFilePath = data.joinPath(migrationNotesFileName);
 
             writeFileSync(migrationNotesFilePath, Array.from(migrationNotes).join("\r\n\r\n"), "utf8");
